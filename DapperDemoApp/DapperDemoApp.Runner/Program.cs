@@ -11,7 +11,9 @@ namespace DapperDemoApp.Runner
         static void Main(string[] args)
         {
 
-            var userRepo = new UserRepository(Config.ConnectionString);
+            //var userRepo = new UserRepository(Config.ConnectionString);
+            var rdsConnString = Config.GetRDSConnectionString();
+            var userRepo = new UserRepository(rdsConnString);
 
 
             //uncomment following link to Insert Data
